@@ -1,0 +1,18 @@
+# Node / React (recreated by "npm install" and "npm run build")
+node_modules/
+build/
+npm-debug.log*
+
+# Maven / Java (recreated by "mvn compile")
+target/
+*.class
+
+# IDE and OS files
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+.DS_Store
+Thumbs.db

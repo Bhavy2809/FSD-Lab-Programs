@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- Program 6: Add-book form, served at http://localhost:8080/books/add (run: mvn spring-boot:run) -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+</head>
+
+<body>
+
+    <h2>Add a New Book</h2>
+
+    <form th:action="@{/books/add}"
+          th:object="${book}"
+          method="post">
+
+        <label>Title:</label>
+        <input type="text" th:field="*{title}" required/>
+
+        <br><br>
+
+        <label>Author:</label>
+        <input type="text" th:field="*{author}" required/>
+
+        <br><br>
+
+        <button type="submit">Save Book</button>
+
+    </form>
+
+    <br>
+
+    <a th:href="@{/books}">Back to Book List</a>
+
+</body>
+</html>

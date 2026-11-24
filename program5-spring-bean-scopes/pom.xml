@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Program 5: Spring Bean Scopes and Lifecycle  (Bhavy Shukla, 1NT23CS042)
+
+  THINGS TO INSTALL (one time)
+    1. JDK 17 or newer          ->  check:  java -version
+    2. Apache Maven 3.9+        ->  check:  mvn -v
+    (Or open this folder in IntelliJ IDEA / Eclipse / VS Code - they read this
+     pom.xml and download Spring automatically.)
+
+  STEPS TO EXECUTE (terminal, inside this folder)
+    1. cd program5-spring-bean-scopes
+    2. mvn compile exec:java
+
+  The first run downloads Spring from the internet, so it needs a connection.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.nmit</groupId>
+    <artifactId>spring-bean-scopes</artifactId>
+    <version>1.0.0</version>
+    <name>Program 5 - Spring Bean Scopes and Lifecycle</name>
+
+    <properties>
+        <maven.compiler.release>17</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- class run by "mvn exec:java" -->
+        <exec.mainClass>com.nmit.beans.MainApp</exec.mainClass>
+    </properties>
+
+    <dependencies>
+        <!-- Spring core container: @Configuration, @Bean, @Scope -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>6.1.14</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Lets us run MainApp with: mvn compile exec:java -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

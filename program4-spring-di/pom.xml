@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Program 4: Spring Dependency Injection  (Bhavy Shukla, 1NT23CS042)
+
+  THINGS TO INSTALL (one time)
+    1. JDK 17 or newer          ->  check:  java -version
+    2. Apache Maven 3.9+        ->  check:  mvn -v
+    (Or open this folder in IntelliJ IDEA / Eclipse / VS Code with the Java
+     extension pack - they read this pom.xml and download Spring automatically.)
+
+  STEPS TO EXECUTE (terminal, inside this folder)
+    1. cd program4-spring-di
+    2. Run the main program (Spring container + constructor injection):
+         mvn compile exec:java
+    3. Run the mock test (no Spring, fake MessageService):
+         mvn compile exec:java -Dexec.mainClass=com.nmit.di.NotificationClientTest
+
+  The first run downloads Spring from the internet, so it needs a connection.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.nmit</groupId>
+    <artifactId>spring-di</artifactId>
+    <version>1.0.0</version>
+    <name>Program 4 - Spring Dependency Injection</name>
+
+    <properties>
+        <maven.compiler.release>17</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- default class for "mvn exec:java"; override with -Dexec.mainClass=... -->
+        <exec.mainClass>com.nmit.di.MainApp</exec.mainClass>
+    </properties>
+
+    <dependencies>
+        <!-- Lab dependency: Spring core container (IoC / DI) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>6.1.14</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Lets us run a main() class with: mvn compile exec:java -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
