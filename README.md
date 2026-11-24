@@ -12,7 +12,7 @@ Every program is a separate, ready-to-run project in its own folder.
 | 5 | Spring Bean Scopes and Lifecycle | `program5-spring-bean-scopes` | Spring 6 | `mvn compile exec:java` |
 | 6 | Book Management (Spring Boot + Thymeleaf) | `program6-book-management` | Spring Boot 3 | `mvn spring-boot:run` |
 
-Each main source file also has the install and run steps written in a comment at the top.
+Each program folder has its **own README.md** with install steps, run steps and expected output, and each main source file has the same steps in a comment at the top.
 
 ---
 
@@ -126,10 +126,10 @@ Stop with `Ctrl + C`.
 ```
 FSD-Lab-Programs/
 ├── README.md
-├── program1-scholarship-counter/   package.json, public/index.html, src/App.js, src/index.js
-├── program2-textarea-form/         package.json, public/index.html, src/TextAreaForm.js, src/index.js
-├── program3-input-validation/      package.json, public/index.html, src/ValidatedInput.js, src/index.js
-├── program4-spring-di/             pom.xml, src/main/java/com/nmit/di/*.java
-├── program5-spring-bean-scopes/    pom.xml, src/main/java/com/nmit/beans/*.java
-└── program6-book-management/       pom.xml, src/main/java/com/nmit/bookapp/**, src/main/resources/templates/*.html
+├── program1-scholarship-counter/   README.md, package.json, public/index.html, src/App.js, src/index.js
+├── program2-textarea-form/         README.md, package.json, public/index.html, src/TextAreaForm.js, src/index.js
+├── program3-input-validation/      README.md, package.json, public/index.html, src/ValidatedInput.js, src/index.js
+├── program4-spring-di/             README.md, pom.xml, src/main/java/com/nmit/di/*.java
+├── program5-spring-bean-scopes/    README.md, pom.xml, src/main/java/com/nmit/beans/*.java
+└── program6-book-management/       README.md, pom.xml, src/main/java/com/nmit/bookapp/**, src/main/resources/templates/*.html
 ```
